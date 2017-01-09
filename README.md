@@ -1,4 +1,4 @@
-## obsolete-reedbuck  | TO DO LIST | Elle @elleyes | Ryan @ryankent
+## obsolete-reedbuck  | TO DO LIST | Elle @elleyes | Ryan @ryanakent
 
 ## Project Description
 
