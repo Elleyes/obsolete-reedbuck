@@ -79,6 +79,12 @@ Generating Models
  Persist (make permanent) the models by running
    sequelize db: migrate
    
+ Create
+    routes/index.js
+    controllers/index.js
+    
+    
+   
 Create Controllers and Routing
   
   create controllers folder in server
