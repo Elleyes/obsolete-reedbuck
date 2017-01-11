@@ -6,12 +6,14 @@ Complete a to do list application that applies user stories
 
 ## Tech Stack And Tools
 
-1. Node
-2. Express
-3. Postgres
-4. EJS
-5. CSS
-6. Postico
+- [Scotch.io Tutorial: Node+Express+PostgreSql](https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize)
+- [Node](https://nodejs.org/en/)
+- [Express](http://expressjs.com/)
+- [PostgreSQL](https://www.postgresql.org/docs/9.5/static/index.html)
+- [ElephantSQL](https://www.elephantsql.com/)
+- [Sequelize](http://docs.sequelizejs.com/en/latest/) which is an [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping)
+- [Postman](https://www.getpostman.com/docs/introduction)
+
 
 ## Project Context
 
@@ -33,7 +35,7 @@ Complete a to do list application that applies user stories
 
 ### Additional Specs
 
-- [ ] Create the back end using node and express
+- [ ] Create the back end using _______
 - [ ] Create a database of to do list items
 
 ### Stretch Specs
@@ -51,5 +53,44 @@ Complete a to do list application that applies user stories
 6. NPM install
 7. Follow express setup tutorial
 8. Follow ejs setup tutorial
-9. Update functionality...
+9. Update functionality and this documentation list...
+
+  Refactorserver.models/index.js  file into ES6 
+
+  createdb todos-dev
+
+  update config file
+  dialect = postgres
+  username = username
+  database = todos-dev
+  
+ Update sequalize in index.js
+ 
+ Export Database
+ 
+Generating Models
+
+  create files then refactor to ES6
+    todo file
+    migration file
+    todo item
+    migration firle
+  
+ Persist (make permanent) the models by running
+   sequelize db: migrate
+   
+ Create
+    routes/index.js
+    controllers/index.js
+    
+    
+   
+Create Controllers and Routing
+  
+  create controllers folder in server
+    create todo.js file in controllers
+
+updated app.js file with server route requirement
+
+Now start postman
 
