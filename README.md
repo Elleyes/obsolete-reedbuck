@@ -90,4 +90,8 @@ Create Controllers and Routing
   create controllers folder in server
     create todo.js file in controllers
 
-  
+updated app.js file with server route requirement
+
+Now start postman
+
+
