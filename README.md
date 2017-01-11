@@ -55,3 +55,43 @@ Complete a to do list application that applies user stories
 8. Follow ejs setup tutorial
 9. Update functionality and this documentation list...
 
+  Refactorserver.models/index.js  file into ES6 
+
+  createdb todos-dev
+
+  update config file
+  dialect = postgres
+  username = username
+  database = todos-dev
+  
+ Update sequalize in index.js
+ 
+ Export Database
+ 
+Generating Models
+
+  create files then refactor to ES6
+    todo file
+    migration file
+    todo item
+    migration firle
+  
+ Persist (make permanent) the models by running
+   sequelize db: migrate
+   
+ Create
+    routes/index.js
+    controllers/index.js
+    
+    
+   
+Create Controllers and Routing
+  
+  create controllers folder in server
+    create todo.js file in controllers
+
+updated app.js file with server route requirement
+
+Now start postman
+
+
