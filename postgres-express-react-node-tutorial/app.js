@@ -2,6 +2,11 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
+const webpack = require('webpack')
+const webpackMiddleware = require('webpack-dev-middleware')
+const webpackHotMiddleware = require('webpack-hot-middleware')
+const config = require('./webpack.config.js')
+
 // Set up the express app
 const app = express();
 
@@ -12,6 +17,23 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+const compiler = webpack(config)
+const middleware = webpackMiddleware(compiler, {
+  publicPath: config.output.publicPath,
+  contentBase: 'src',
+  stats: {
+    colors: true,
+    hash: false,
+    timings: true,
+    chunks: false,
+    cunkModules: false,
+    modules: false,
+  }
+})
+
+app.use(middleware)
+app.use(webpackHotMiddleware(compiler))
+app.use(express.static('client'))
 // Require our routes into the application.
 require('./server/routes')(app);
 
