@@ -6,12 +6,15 @@ export default class Current extends Component {
 
   render () {
 
-    const addTaskButton = <button className="addtask">Add New Task</button>
+    const addTask =
+      <div className="addTask">
+        <input class="textbox" type="text" />
+      </div>
 
     return (
       <div className="current">
-        {addTaskButton}
-        current tasks
+        Current Tasks
+        {addTask}
       </div>
 
     )

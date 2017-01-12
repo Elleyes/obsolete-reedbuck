@@ -1,20 +1,154 @@
-body {
-  padding: 50px;
+.background {
+  background-color: black;
+  background-size: cover;
+}
+
+.App {
+  position: relative;
+  z-index: 100;
+  padding: 20px;
+  background: rgb(34,34,34); /* for IE */
+  background: rgba(34,34,34,0.75);
+  margin-top: 20px !important;
+  padding-bottom: 10px;
+  margin: auto;
+  text-align: center;
+  max-width: 70%;
+  border-radius: 40px;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+
+.container > div {
+  padding: 0 5px 0 5px;
+  display: inline-block;
+}
+
+/* Table styling */
+.header {
+  text-align: center;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 30px;
+  color: white;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+div.input-group {
+  margin: auto;
+  max-width: 500px;
+}
+
+.todo-item {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+.glyphicon-ok {
+  color: green;
+}
+
+.glyphicon-remove {
+  color: #CC3300;
+}
+
+.glyphicon-plus, .glyphicon-arrow-up, .glyphicon-arrow-down, .glyphicon-floppy-disk {
+  color: #000066;
+}
+
+input[type="text"] {
+  background-color: rgba(0,0,0,0.1);
+}
+
+
+/*body {
   font: "Lucinda Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
-}
-
 .container {
+  padding: 5px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .title {
+  height: 30px;
+  width: 200px;
+  border-style: ridge;
+  text-align: center;
+  margin-bottom: 5px;
 }
 
 .current {
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  border-style: ridge;
+  margin-bottom: 5px;
+}
+
+.addtask {    // Elle textbox
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  text-align: center;
+  box-sizing: border-box;
+  color: #00B7FF;
 }
 
 .archived {
+  height: 200px;
+  width: 200px;
+  border-top: 5px;
+  text-align: center;
+  border-style: ridge;
 }
+
+.checkboxComplete {
+  content     : '✓';
+  display     : block;
+  width       : 1em;
+  color       : rgb(153,204,102);
+  font-size   : 0.875em;
+  line-height : 1em;
+  text-align  : center;
+  text-shadow : 0 0 0.0714em rgb(115,153,77);
+  font-weight : bold;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.checkboxDelete {
+  border-radius: 0%;
+  border-width: 0px;
+  background-color: #FFFFFF
+}
+
+
+
+.textbox {
+    border: 1px dotted #000000;
+    outline:0;
+    height:25px;
+    width: 275px;
+  } */
