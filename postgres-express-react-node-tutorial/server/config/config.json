@@ -2,7 +2,7 @@
   "development": {
     "username": "yaelamyra",
     "password": null,
-    "database": "task_list",
+    "database": "todos-dev",
     "host": "127.0.0.1",
     "port": 5432,
     "dialect": "postgres"
