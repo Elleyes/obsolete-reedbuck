@@ -1,7 +1,7 @@
 import React from 'react';
 import Todo from './Todo'
 
-export default class List extends Component {
+class List extends React.Component{
   render() {
     const {todos,
       handleDeleteClick,
@@ -28,3 +28,5 @@ export default class List extends Component {
     )
   }
 }
+
+export default List

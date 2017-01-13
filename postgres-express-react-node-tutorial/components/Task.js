@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './Button'
 
-export default class Task extends Component {
+class Task extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -59,3 +59,4 @@ export default class Task extends Component {
   }
 
 }
+export default Task;

@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './Button'
 import Task from './Task'
 
-export default class Todo extends Component {
+class Todo extends React.Component {
 
   render () {
     const {todo, tasks, onTaskChange, onCompleteToggle, onDelete, movePriorityDown, movePriorityUp } = this.props
@@ -57,3 +57,5 @@ export default class Todo extends Component {
     )
   }
 }
+
+export default Todo;

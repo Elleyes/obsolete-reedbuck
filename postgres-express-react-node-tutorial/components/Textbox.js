@@ -1,7 +1,5 @@
 import React from 'react';
-
-
-export default class Textbox extends Component {
+class Textbox extends React.Component{
 
   submitAndClear(e, task) {
     document.getElementById('newTask').value = ''
@@ -24,3 +22,5 @@ export default class Textbox extends Component {
     )
   }
 }
+
+export default Textbox

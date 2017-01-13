@@ -1,6 +1,7 @@
+
 import React from 'react';
 
-export default class Button extends Component {
+class Button extends React.Component{
   render() {
     const iconType = ' glyphicon ' + this.props.icon
     return(
@@ -10,3 +11,5 @@ export default class Button extends Component {
     )
   }
 }
+
+export default Button
