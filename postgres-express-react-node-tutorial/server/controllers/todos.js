@@ -8,7 +8,9 @@ module.exports = {
         title: req.body.title,
       })
       .then(todo => res.status(201).send(todo))
-      .catch(error => res.status(400).send(error));
+      .catch(error => {
+        res.status(400).send(error)
+      });
   },
   list(req, res) {
     return Todo
@@ -18,6 +20,10 @@ module.exports = {
           as: 'todoItems',
         }],
       })
+      // .then( todos => {
+      //   console.log( todos )
+      //   return todos
+      // })
       .then(todos => res.status(200).send(todos))
       .catch(error => res.status(400).send(error));
   },

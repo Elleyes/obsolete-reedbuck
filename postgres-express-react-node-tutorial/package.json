@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon ./bin/www",
+    "start": "nodemon ./bin/www",
+    "createdb": "createdb task_list",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -1,9 +1,11 @@
 import React from 'react';
 class Textbox extends React.Component{
 
-  submitAndClear(e, task) {
+  submitAndClear( event ) {
+    const task = document.getElementById('newTask').value
     document.getElementById('newTask').value = ''
-    this.props.handleAddTodo(e, task)
+
+    this.props.handleAddTodo( event, task )
   }
 
   render() {
@@ -11,9 +13,9 @@ class Textbox extends React.Component{
       <div className="input-group col-lg-6">
         <span className="input-group-btn">
           <button
-          className="btn btn-secondary"
-          type="button"
-          onClick={(e) => this.submitAndClear(e, document.getElementById('newTask').value)}>
+            className="btn btn-secondary"
+            type="button"
+            onClick={this.submitAndClear.bind(this)}>
           <span className="glyphicon glyphicon-plus"></span>
           </button>
         </span>

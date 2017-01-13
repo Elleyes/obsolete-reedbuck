@@ -8,20 +8,62 @@ import Textbox from '../components/Textbox'
 export default class App extends Component {
   constructor(props) {
     super(props)
+
     this.state = {
       Tasks : []
     }
-    // this.getAllTodos()
     // this.handleCompleteClick = this.handleCompleteClick.bind(this)
     // this.handleDeleteClick = this.handleDeleteClick.bind(this)
-    // this.handleAddTodo = this.handleAddTodo.bind(this)
     // this.onTaskChange = this.onTaskChange.bind(this)
     // this.movePriorityUp = this.movePriorityUp.bind(this)
     // this.movePriorityDown = this.movePriorityDown.bind(this)
   }
 
+  componentDidMount() {
+    this.getAllTodos()
+  }
 
+  // initial fetch to retrive stored Todos from DB.
+  getAllTodos() {
+    fetch('http://localhost:8000/api/todos',{
+      method: 'get',
+    })
+    .then(response => response.json())
+    .then(results => {
+      this.setState({
+        Tasks: results
+      })
+    })
+  }
 
+  // - - - API comunication methods - - -
+  handleCompleteClick(e, todoId) {
+    fetch(`http://localhost:8000/api/todos/complete/${todoId}`,{
+      method: 'put'
+    })
+    .then(() => this.getAllTodos())
+  }
+
+  handleDeleteClick(e, todoId) {
+    fetch(`http://localhost:8000/api/todos/${todoId}`,{
+      method: 'delete',
+    })
+    .then(() => this.getAllTodos())
+  }
+
+  handleAddTodo(e, title) {
+     const taskObj = { title }
+
+     fetch('http://localhost:8000/api/todos',{
+       method: 'post',
+       body: JSON.stringify(taskObj),
+       headers: new Headers({
+         'Content-Type': 'application/json',
+         'Accept': 'application/json'
+       })
+     })
+     .then(() => this.getAllTodos())
+   }
 
   render() {
     const title = <div className="title">Task List</div>
@@ -45,7 +87,7 @@ export default class App extends Component {
             movePriorityDown={this.movePriorityDown}
             todos={this.state.Tasks}/>
           </table>
-          <Textbox handleAddTodo={this.handleAddTodo} />
+          <Textbox handleAddTodo={this.handleAddTodo.bind(this)} />
         </div>
       </div>
 

@@ -9,19 +9,20 @@ class List extends React.Component{
       handleCompleteClick,
       movePriorityUp,
       movePriorityDown} = this.props
+
+    console.log( todos )
+
     return(
       <tbody>
         { todos.map((todo) =>
           <Todo
-          key={todo.id}
-          id={todo.id}
-          todo={todo}
-          tasks={this.props.todos}
-          onTaskChange={ (e) => onTaskChange(e, todo) }
-          onDelete={ (e) => handleDeleteClick(e, todo.id) }
-          onCompleteToggle={ (e) => handleCompleteClick(e, todo.id) }
-          movePriorityUp={ (e) => movePriorityUp(e, todo) }
-          movePriorityDown={ (e) => movePriorityDown(e, todo)  }
+            key={todo.id}
+            {...todo}
+            onTaskChange={ (e) => onTaskChange(e, todo) }
+            onDelete={ (e) => handleDeleteClick(e, todo.id) }
+            onCompleteToggle={ (e) => handleCompleteClick(e, todo.id) }
+            movePriorityUp={ (e) => movePriorityUp(e, todo) }
+            movePriorityDown={ (e) => movePriorityDown(e, todo)  }
           />
         )}
       </tbody>
