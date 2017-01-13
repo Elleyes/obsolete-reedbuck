@@ -13,14 +13,15 @@ export default class App extends Component {
       Tasks : []
     }
     // this.handleCompleteClick = this.handleCompleteClick.bind(this)
-    // this.handleDeleteClick = this.handleDeleteClick.bind(this)
     // this.onTaskChange = this.onTaskChange.bind(this)
     // this.movePriorityUp = this.movePriorityUp.bind(this)
     // this.movePriorityDown = this.movePriorityDown.bind(this)
   }
 
   componentDidMount() {
+    // this.onTaskChange()
     this.getAllTodos()
+    this.handleDeleteClick()
   }
 
   // initial fetch to retrive stored Todos from DB.
@@ -65,6 +66,20 @@ export default class App extends Component {
      .then(() => this.getAllTodos())
    }
 
+  onTaskChange(e, todo) {
+    const {todoId, title} = todo
+    const taskObj = { title }
+    fetch(`http://localhost:8000/api/todos/${todoId}`, {
+      method: 'put',
+      body: JSON.stringify(taskObj),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      })
+    })
+    .then(() => this.getAllTodos())
+  }
+
   render() {
     const title = <div className="title">Task List</div>
 
@@ -80,8 +95,8 @@ export default class App extends Component {
               </tr>
             </thead>
             <List
-            onTaskChange={this.onTaskChange}
-            handleDeleteClick={this.handleDeleteClick}
+            onTaskChange={this.onTaskChange.bind(this)}
+            handleDeleteClick={this.handleDeleteClick.bind(this)}
             handleCompleteClick={this.handleCompleteClick}
             movePriorityUp={this.movePriorityUp}
             movePriorityDown={this.movePriorityDown}

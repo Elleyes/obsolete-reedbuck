@@ -2,9 +2,12 @@
   "name": "postgres-express-react-node-tutorial",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon ./bin/www",
+    "db:init": "psql todo < ./schema.sql",
+    "dev-migration": "sequelize db:migrate",
+    "dev-down": "sequelize db:migrate:undo",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

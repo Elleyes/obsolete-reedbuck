@@ -11,13 +11,12 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
+      complete: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
+      ranking: {
+        type: Sequelize.INTEGER,
       },
     }),
   down: (queryInterface /* , Sequelize */) => queryInterface.dropTable('Todos'),

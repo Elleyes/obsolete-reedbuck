@@ -19,7 +19,7 @@ class Textbox extends React.Component{
           <span className="glyphicon glyphicon-plus"></span>
           </button>
         </span>
-        <input id="newTask" type="text" className="form-control" placeholder="What do you want to do?"></input>
+        <input id="newTask" type="text" className="form-control" placeholder="Enter task here"></input>
       </div>
     )
   }

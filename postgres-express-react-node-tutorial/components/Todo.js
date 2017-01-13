@@ -4,18 +4,29 @@ import Task from './Task'
 
 class Todo extends React.Component {
 
+
+  // classChange() =>
+  // //place in input
+  // onClick={classChange}
+
   render () {
-    const { title, id, todoItems } = this.props
+    const { title, id, onDelete, todoItems } = this.props
 
     return(
       <tr>
-        <td>{title}</td>
+        <td>
+          <input type="text" className="editable" placeholder="{title}"></input>
+        </td>
         <td>{todoItems.map( item =>
           <Task key={`task-${id}-${item.id}`} {...item} /> )}
+        </td>
+        <td>
+          <Button icon={"glyphicon-remove"} onClick={onDelete}/>
         </td>
       </tr>
     )
     // const {todo, tasks, onTaskChange, onCompleteToggle, onDelete, movePriorityDown, movePriorityUp } = this.props
+
     // const {id, completed} = todo
     // const taskIsStriked = completed?
     // <Task
